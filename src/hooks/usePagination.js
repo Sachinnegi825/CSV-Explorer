@@ -8,8 +8,8 @@ export const usePagination = (totalRows) => {
   const totalPages = Math.max(1, Math.ceil(totalRows / pageSize))
 
   const safeSetPage = useCallback(
-    (p) => setPage(Math.min(Math.max(1, p), Math.max(1, Math.ceil(totalRows / pageSize)))),
-    [totalRows, pageSize]
+    (p) => setPage(Math.min(Math.max(1, p), totalPages)),
+    [totalPages]
   )
 
   const changePageSize = useCallback((size) => {

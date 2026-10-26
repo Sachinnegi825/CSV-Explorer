@@ -10,7 +10,9 @@ Built as part of the candidate assessment task for **Constems AI Systems Pvt. Lt
 
 - **CSV Upload & Parsing**: Supports drag-and-drop and standard file picker. Parses files client-side using PapaParse with file size validation.
 - **Tabular Data Display**: Clean, responsive table showing row numbers, column headers, and graceful fallback for empty values.
-- **Dynamic Column Filtering**: Filter records across all columns or target a specific column using an interactive dropdown and real-time search input with an instant clear button (`✕`).
+- **Global Search Box**: Real-time free-text search across all columns simultaneously with an instant clear button (`✕`).
+- **Dynamic Select Boxes (Dropdown Filters)**: Automatically extracts unique categorical values from CSV columns (e.g. Department, City, Status, Role) for instant 1-click filtering.
+- **Date Range Filter**: Filter records between a "From" and "To" date on any date column (with automatic date column detection).
 - **Client-Side Pagination**: Configurable rows per page (10, 25, 50, 100), page indicator, and previous/next page navigation.
 - **Intuitive Navigation**: Single "Back to Home" button in the sticky top header to return to the upload screen at any time.
 - **Production-Ready & Clean**: 0 linter errors/warnings, fully responsive, and styled with Tailwind CSS.
@@ -109,7 +111,9 @@ npm run lint
 1. **Upload**: Drop a `.csv` file into the upload dropzone or click to select a file from your device.
 2. **View Data**: Once parsed, the view switches to the data table, presenting the columns and rows with pagination.
 3. **Filter**:
-   - Leave the column selector on **All Columns** to search across every field.
-   - Select a specific column (e.g. `City`, `Department`) to narrow search results to that column.
-   - Use the **✕** button to instantly clear the filter.
-4. **Reset**: Click the **← Back to Home** button in the header to return to the upload screen and load another dataset.
+   - **Global Search**: Type in the search box to search across all records instantly.
+   - **Select Boxes**: Use the dropdowns (`All Department`, `All City`, `All Status`, etc.) to filter by specific categorical values with 1 click.
+   - **Date Range Filter**: Select "From" and "To" dates to view records within a specific timeframe.
+   - Multiple filters work together simultaneously in real-time.
+4. **Clear All**: Reset all search inputs, dropdowns, and date boundaries with the single-click **Clear All** button.
+5. **Reset / Back**: Click the **← Back to Home** button in the header to return to the upload screen and load another dataset.
